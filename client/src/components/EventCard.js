@@ -12,17 +12,17 @@ export default function EventCard({event, title, description, attire}) {
     const [plusOne, setPlusOne] = useState(false)
 
 
-    function handleClick(e) {
-        e.preventDefault();
-        fetch("/event_setting/:id", {
-            method: "GET",
-            headers: {"Content-Type": "application/json"},
-            // body: JSON.stringify(plusOne),
-        }).then((r) => {setPlusOne(!plusOne);
-            // navigate('/eventcard')
+    // function handleClick(e) {
+    //     e.preventDefault();
+    //     fetch("/event_setting/:id", {
+    //         method: "GET",
+    //         headers: {"Content-Type": "application/json"},
+    //         // body: JSON.stringify(plusOne),
+    //     }).then((r) => {setPlusOne(!plusOne);
+    //         // navigate('/eventcard')
 
-        })  
-    }    
+    //     })  
+    // }    
 
 
     
