@@ -14,9 +14,9 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
 
-  post "/createvent", to: "events#create"
+  # post "/createvent", to: "events#create"
 
-  get "/eventcard", to: "event_settings#show"
+  # get "/eventcard", to: "event_settings#show"
 
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!
