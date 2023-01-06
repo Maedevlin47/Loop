@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2022_12_23_145608) do
     t.string "title"
     t.string "description"
     t.string "attire"
+    t.integer "likes"
   end
 
   create_table "users", force: :cascade do |t|

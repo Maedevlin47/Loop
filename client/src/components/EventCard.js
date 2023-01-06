@@ -9,7 +9,7 @@ export default function EventCard({event, title, description, attire}) {
     console.log(event);
 
     
-    const [plusOne, setPlusOne] = useState(false)
+    // const [plusOne, setPlusOne] = useState(false)
 
 
     // function handleClick(e) {

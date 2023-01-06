@@ -42,7 +42,7 @@ const EventContainer = () => {
 
     return (
         <main>
-            <CreateEvent onCreateEvent={handleAddEvent}/>
+            {/* <CreateEvent onCreateEvent={handleAddEvent}/> */}
         </main>
     )
 

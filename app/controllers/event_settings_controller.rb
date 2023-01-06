@@ -10,8 +10,8 @@ class EventSettingsController < ApplicationController
 
     end
 
-    def create 
-        EventSetting.create( params[:user_id], params[:event_id], params[:plus_one] )
-    end
+    # def create 
+    #     EventSetting.create( params[:user_id], params[:event_id], params[:plus_one] )
+    # end
 
 end

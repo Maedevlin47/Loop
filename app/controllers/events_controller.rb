@@ -31,7 +31,7 @@ class EventsController < ApplicationController
     def update
         event = Event.find_by(id: params[:id])
             if event
-                event.update(event_params)
+                event.update(likes)
                 render json: event
             else
                 render json: {error: 'Event not found'}, status: :not_found
@@ -52,6 +52,9 @@ private ########################################
 
     def event_params
         params.permit(:title, :description, :attire)
+    end
+    def likes
+        params.permit(:likes)
     end
 
     

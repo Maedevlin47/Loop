@@ -1,5 +1,5 @@
 import {useState} from "react"
-import {useNavigate} from "react-router-dom"
+// import {useNavigate} from "react-router-dom"
 
 
 function CreateEvent ({userEvents, setUserEvents}) {
@@ -16,7 +16,7 @@ function CreateEvent ({userEvents, setUserEvents}) {
 })
     // const { event, title, description, attire} = event
 
-    let navigate = useNavigate()
+    // let navigate = useNavigate()
 
     const handleChange = (e) => {
         setEventData({...eventData, [e.target.name]: e.target.value})

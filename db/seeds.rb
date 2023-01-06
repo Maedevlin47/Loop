@@ -23,7 +23,8 @@ strings = ["casual","business casual", "business"]
     5.times {Event.create(
         title:"Go to " + Faker::Mountain.name, 
         description: Faker::Quotes::Shakespeare.hamlet_quote,
-        attire: strings.sample)}
+        attire: strings.sample,
+        likes: rand(1...500))}
 puts "Events planned my man!"
 
 puts " Looking at Event Settings"

@@ -25,15 +25,29 @@ function EventList({allEvents, setAllEvents, handleDeleteEvent}) {
         fetch('/event_settings', {
             method: "POST",
             headers: {"Content-Type": "Application/json"},
-            // body: JSON.stringify(plusOne)
+            body: JSON.stringify(plusOne)
             }).then((r) => {setPlusOne(!plusOne);
                 // navigate('/eventcard')
     
             })  
         }  
 
+    return (
+        <div>
+            {
+                allEvents.map(event => <EventListCard event={event} key={event.id} handleDeleteEvent={handleDeleteEvent}/>)
+            }
+            
 
-    // function handleClick(e) {
+        </div>
+            
+    )
+}   
+export default EventList;
+
+
+
+  // function handleClick(e) {
     //     e.preventDefault();
 
     //     fetch('/event_settings', {
@@ -58,21 +72,4 @@ function EventList({allEvents, setAllEvents, handleDeleteEvent}) {
                     
     //         })
     // }
-
-
-    return (
-        <div>
-            {
-                allEvents.map(event => <EventListCard event={event} key={event.id} setAllEvents={setAllEvents} handleDeleteEvent={handleDeleteEvent}/>)
-            }
-            
-
-        </div>
-            
-    )
-}   
-
-export default EventList;
-
-
 

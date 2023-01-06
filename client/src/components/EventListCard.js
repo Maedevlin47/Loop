@@ -1,20 +1,32 @@
 import React, {useState} from 'react';
 
 const headers = {
-    Accepts: "application/json",
+    Accept: "application/json",
         "Content-Type" : "application/json"}
 
 function EventListCard({event, handleDeleteEvent}) {
 
     const [handleButton, setHandleButton] = useState(true);
-    // (<button onClick={handleClick}>{plusOne ? "Lone Ranger" : "More Friends, More fun"}</button>);
+    const [eventData, setEventData] = useState(event)
+
 
     function useButton () {
         setHandleButton(handleButton => !handleButton)
     }
 
-  function handleDelete(id){
-       handleDeleteEvent(id)
+    function updateLikes() {
+        fetch(`/events/${event.id}`, {
+        method: "PATCH",
+        headers,
+        body: JSON.stringify({ likes: ++event.likes }),
+        }).then((r) =>r.json())
+        .then(((data)=>{
+            setEventData({...data})
+        }))
+    }
+
+function handleDelete(id){
+    handleDeleteEvent(id)
         fetch(`events/${id}`,{
             method: 'DELETE',
             headers,
@@ -24,12 +36,13 @@ function EventListCard({event, handleDeleteEvent}) {
 
     return (
         <div>
-
-     <h1>Title: {event.title}</h1>
-    <p>Description: {event.description}</p>
-     <p>Attire: {event.attire}</p>
-      <button onClick = {useButton}>{handleButton ? "Lone Wolf" : "More friends, more fun" }</button>
-      <button onClick={()=>handleDelete(event.id)}>DeleteButton</button>
+    <h1>Title: {event.title}</h1>
+        <p>Description: {event.description}</p>
+        <p>Attire: {event.attire}</p>
+        <p>Likes: {event.likes}</p>
+    <button onClick = {useButton}>{handleButton ? "Lone wolf" : "More friends, more fun" }</button>
+    <button onClick={()=>handleDelete(event.id)}>DeleteButton</button>
+    <button className= 'fancy-button'onClick={()=>updateLikes(eventData)}>Like</button>
             
         </div>
     );
