@@ -88,6 +88,7 @@ export default CreateEvent;
 
 
 
+//<button type="submit">Add friend!</button>
 
 
 

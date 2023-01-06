@@ -1,12 +1,12 @@
 import React from "react";
-import {useState} from "react"
+// import {useState} from "react"
 // import CreateEvent from './CreateEvent';
 
 // import {useNavigate} from "react-router-dom"
 
 
 export default function EventCard({event, title, description, attire}) {
-    console.log(event);
+    // console.log(event);
 
     
     // const [plusOne, setPlusOne] = useState(false)

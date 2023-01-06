@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2022_12_23_145608) do
 
   create_table "event_settings", force: :cascade do |t|
-    t.boolean "plus_one"
+    t.string "plus_one"
     t.integer "event_id", null: false
     t.integer "user_id", null: false
     t.index ["event_id"], name: "index_event_settings_on_event_id"

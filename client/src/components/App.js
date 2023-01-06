@@ -44,7 +44,7 @@ function handleDeleteEvent(id){
       <Route exact path="/logout" element={<LogOut user= {user} setUser= {setUser} />}/>
       {/* Need events page for showing all events and creating events */}
       {/* Need event setting page that allows us to ... Ask the user if they're bringing a plus one to an event */}
-      <Route exact path="/events" element={<EventList allEvents={allEvents} setAllEvents={setAllEvents} handleDeleteEvent={handleDeleteEvent}/>}/>
+      <Route exact path="/events" element={<EventList user={user} allEvents={allEvents} setAllEvents={setAllEvents} handleDeleteEvent={handleDeleteEvent}/>}/>
     </Routes>
     </div>
   );

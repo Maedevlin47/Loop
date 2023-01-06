@@ -10,8 +10,16 @@ class EventSettingsController < ApplicationController
 
     end
 
-    # def create 
-    #     EventSetting.create( params[:user_id], params[:event_id], params[:plus_one] )
-    # end
+    def create
+        create_event_settings = EventSetting.create(post_event_settings)
+        render json: create_event_setting, status: :created
 
+    end
+
+    
+    private 
+
+    def post_event_settings
+        params.permit(:plus_one, :event_id, :user_id)
+    end 
 end

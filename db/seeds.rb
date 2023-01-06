@@ -29,7 +29,7 @@ puts "Events planned my man!"
 
 puts " Looking at Event Settings"
     5.times {EventSetting.create(
-        plus_one: Faker::Boolean.boolean, 
+        plus_one: Faker::GreekPhilosophers.name, 
         user: User.all.sample, 
         event: Event.all.sample )}
 puts "Event Settings Set, bro!"
