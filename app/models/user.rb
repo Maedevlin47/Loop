@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
     def all_event_details
         self.event_settings + self.events
-    # self.event_settings + self.events cluttered objects but works.
+
     end
 end
 

@@ -56,8 +56,6 @@ function Login({ user, setUser }) {
         </form>
         {errors? <div className = "error-message">{errors}</div>: null}
 
-     
-
     </div>
     );
 }

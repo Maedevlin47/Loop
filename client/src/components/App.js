@@ -24,7 +24,6 @@ function App() {
           .then(r => r.json())
           .then(setAllEvents)  
       }, [])
-    // The useEffect above should be for grabbing our sessions for logged in users. Would this be a separate GET route or attached to the login? 
 
 function handleDeleteEvent(id){
   const updateEventArray = allEvents.filter(event => event.id !==id)
@@ -51,3 +50,5 @@ function handleDeleteEvent(id){
 }
 
 export default App;
+
+    // The useEffect above should be for grabbing our sessions for logged in users. Would this be a separate GET route or attached to the login? 

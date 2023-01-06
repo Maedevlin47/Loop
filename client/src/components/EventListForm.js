@@ -37,7 +37,6 @@ export default function EventListForm({user, event}) {
 
         }
 
-    
         return (
             <div>
                 <form onSubmit ={handleSubmit}>
@@ -54,6 +53,5 @@ export default function EventListForm({user, event}) {
                 </form>
             {errors? <div className = "error-message">{errors}</div>: null}
             </div>
- 
         )
 }

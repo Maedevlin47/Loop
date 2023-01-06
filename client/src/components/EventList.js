@@ -5,9 +5,6 @@ import EventListCard from "./EventListCard";
 
 function EventList({allEvents, setAllEvents, handleDeleteEvent, user}) {
 
-  
-    
-
     return (
         <div>
             {

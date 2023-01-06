@@ -14,9 +14,6 @@ function CreateEvent ({userEvents, setUserEvents}) {
         attire: ""
 
 })
-    // const { event, title, description, attire} = event
-
-    // let navigate = useNavigate()
 
     const handleChange = (e) => {
         setEventData({...eventData, [e.target.name]: e.target.value})
@@ -31,8 +28,7 @@ function CreateEvent ({userEvents, setUserEvents}) {
             }).then((r) => {
                 if (r.ok) {
                     r.json().then((newEvent) => {setUserEvents([...userEvents, newEvent])
-                        // [] make into an array, put setterfunction here
-                        // navigate('/events')
+                
                     })
                 } else {
                     r.json().then(json => {
@@ -88,6 +84,11 @@ export default CreateEvent;
 
 
 
+
+
+ // [] make into an array, put setterfunction here
+                        // navigate('/events')
+
 //<button type="submit">Add friend!</button>
 
 
@@ -102,3 +103,7 @@ export default CreateEvent;
     //             navigate("/eventcard")
     //         )
     // }
+
+      // const { event, title, description, attire} = event
+
+    // let navigate = useNavigate()

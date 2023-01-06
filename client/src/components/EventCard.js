@@ -1,11 +1,31 @@
 import React from "react";
 // import {useState} from "react"
 // import CreateEvent from './CreateEvent';
-
 // import {useNavigate} from "react-router-dom"
 
 
 export default function EventCard({event, title, description, attire}) {
+
+
+
+    
+    return(
+        <div className="eventCard">
+            <h3>{`Event's Title: ${event.title}`}</h3>
+            <h4>{`Event's Description: ${event.description}`}</h4>
+            <h5>{`Event's Attire: ${event.attire}`}</h5>
+        <br/> 
+        {/* <button onClick={handleClick}>{plusOne ? "Lone Ranger" : "More Friends, More fun"}</button> */}
+        </div>
+
+    )
+}
+
+
+
+
+
+
     // console.log(event);
 
     
@@ -24,19 +44,6 @@ export default function EventCard({event, title, description, attire}) {
     //     })  
     // }    
 
-
-    
-    return(
-        <div className="eventCard">
-            <h3>{`Event's Title: ${event.title}`}</h3>
-            <h4>{`Event's Description: ${event.description}`}</h4>
-            <h5>{`Event's Attire: ${event.attire}`}</h5>
-        <br/> 
-        {/* <button onClick={handleClick}>{plusOne ? "Lone Ranger" : "More Friends, More fun"}</button> */}
-        </div>
-
-    )
-}
 
 
   //   setBringiningBuddy("I have Friends!")
