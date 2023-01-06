@@ -26,7 +26,10 @@ function App() {
       }, [])
     // The useEffect above should be for grabbing our sessions for logged in users. Would this be a separate GET route or attached to the login? 
 
-
+function handleDeleteEvent(id){
+  const updateEventArray = allEvents.filter(event => event.id !==id)
+  setAllEvents(updateEventArray)
+}
     
   return (
     <div className="App">
@@ -41,7 +44,7 @@ function App() {
       <Route exact path="/logout" element={<LogOut user= {user} setUser= {setUser} />}/>
       {/* Need events page for showing all events and creating events */}
       {/* Need event setting page that allows us to ... Ask the user if they're bringing a plus one to an event */}
-      <Route exact path="/events" element={<EventList allEvents={allEvents} setAllEvents={setAllEvents}/>}/>
+      <Route exact path="/events" element={<EventList allEvents={allEvents} setAllEvents={setAllEvents} handleDeleteEvent={handleDeleteEvent}/>}/>
     </Routes>
     </div>
   );

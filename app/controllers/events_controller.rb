@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
-    skip_before_action :authorize, only: [:index]
+    skip_before_action :authorize
+    # , only: [:index, :show]
 
     def index
         events = Event.all
@@ -8,7 +9,7 @@ class EventsController < ApplicationController
 
     def create
         
-        new_event = Event.create (new_event_params)
+        new_event = Event.create (event_params)
         if new_event.valid?
             render json: new_event
         else
@@ -19,21 +20,39 @@ class EventsController < ApplicationController
     end
 
     def show
-        event_show = Event.show (all_events_params)
-        if event_show
-            render json: event_show, serializer: EventSerializer
+        event = Event.find_by_id(params[:id])
+        if event
+            render json: event
         else 
             render json: {"error": "No event found"}, status: :not_found
         end
     end
 
+    def update
+        event = Event.find_by(id: params[:id])
+            if event
+                event.update(event_params)
+                render json: event
+            else
+                render json: {error: 'Event not found'}, status: :not_found
+            end
+    end 
+
+    def destroy
+        event = Event.find_by_id(params[:id])
+            if event
+                event.destroy
+                head :no_content
+            else
+                render json: {error: 'Event not found'}, status: :not_found
+            end
+    end
+
 private ########################################
 
-    def new_event_params
+    def event_params
         params.permit(:title, :description, :attire)
     end
 
-    def all_events_params
-        params.permit(:title, :description, :attire)
-    end
+    
 end

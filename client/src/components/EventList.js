@@ -2,7 +2,7 @@ import { useState } from "react"
 import { useEffect } from "react"
 import EventListCard from "./EventListCard";
 
-function EventList({allEvents, setAllEvents}) {
+function EventList({allEvents, setAllEvents, handleDeleteEvent}) {
 
     // const [userId, setUserId]=useState('')
     // const [eventId, setEventId]=useState('')
@@ -63,7 +63,7 @@ function EventList({allEvents, setAllEvents}) {
     return (
         <div>
             {
-                allEvents.map(event => <EventListCard event={event} key={event.id} setAllEvents={setAllEvents}/>)
+                allEvents.map(event => <EventListCard event={event} key={event.id} setAllEvents={setAllEvents} handleDeleteEvent={handleDeleteEvent}/>)
             }
             
 

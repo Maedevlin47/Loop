@@ -1,7 +1,10 @@
 import React, {useState} from 'react';
 
+const headers = {
+    Accepts: "application/json",
+        "Content-Type" : "application/json"}
 
-function EventListCard({event}) {
+function EventListCard({event, handleDeleteEvent}) {
 
     const [handleButton, setHandleButton] = useState(true);
     // (<button onClick={handleClick}>{plusOne ? "Lone Ranger" : "More Friends, More fun"}</button>);
@@ -10,6 +13,15 @@ function EventListCard({event}) {
         setHandleButton(handleButton => !handleButton)
     }
 
+  function handleDelete(id){
+       handleDeleteEvent(id)
+        fetch(`events/${id}`,{
+            method: 'DELETE',
+            headers,
+        })
+    }
+
+
     return (
         <div>
 
@@ -17,6 +29,7 @@ function EventListCard({event}) {
     <p>Description: {event.description}</p>
      <p>Attire: {event.attire}</p>
       <button onClick = {useButton}>{handleButton ? "Lone Wolf" : "More friends, more fun" }</button>
+      <button onClick={()=>handleDelete(event.id)}>DeleteButton</button>
             
         </div>
     );

@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
   
   resources :event_settings, only: [:index, :show, :create]
-  resources :events, only: [:index, :create, :show]
+  resources :events, only: [:index, :create, :show, :update, :destroy]
   # resources :users, only: [:index, :create]
 
-
-  get "/users", to: "users#index"
 
   get "/users/:id", to: "users#show"
   post "/signup", to: "users#create"
@@ -14,7 +12,7 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
 
-  # post "/createvent", to: "events#create"
+  post "/createvent", to: "events#create"
 
   # get "/eventcard", to: "event_settings#show"
 
