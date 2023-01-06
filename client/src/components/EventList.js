@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useEffect } from "react"
+import EventListCard from "./EventListCard";
 
 function EventList({allEvents, setAllEvents}) {
 
@@ -30,23 +31,6 @@ function EventList({allEvents, setAllEvents}) {
     
             })  
         }  
-    const [handleButton, setHandleButton] = useState(true);
-    // (<button onClick={handleClick}>{plusOne ? "Lone Ranger" : "More Friends, More fun"}</button>);
-
-    function useButton () {
-        setHandleButton(handleButton => !handleButton)
-    }
-
-    const allEventList = allEvents.map((event, i)=>{
-        return(
-            <div key={i}>
-                <h1>Title: {event.title}</h1>
-                <p>Description: {event.description}</p>
-                <p>Attire: {event.attire}</p>
-                <button onClick = {useButton}>{handleButton ? "Lone Wolf" : "More friends, more fun" }</button>
-            </div>
-        )
-    })
 
 
     // function handleClick(e) {
@@ -78,12 +62,11 @@ function EventList({allEvents, setAllEvents}) {
 
     return (
         <div>
-            <h2>
-                All the events for you!
-            </h2>
-            <h3>{showAllEvents}</h3>
-            {/* <button onClick = {useButton}>{handleButton ? "Lone Wolf" : "More friends, more fun" }</button> */}
-            {allEventList}
+            {
+                allEvents.map(event => <EventListCard event={event} key={event.id} setAllEvents={setAllEvents}/>)
+            }
+            
+
         </div>
             
     )
