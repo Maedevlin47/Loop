@@ -1,30 +1,30 @@
 import { useState } from "react"
 import { useEffect } from "react"
 
-function EventList() {
-    
-    const [allEvents, setAllEvents] = useState([])
-    console.log(allEvents);
+function EventList({allEvents, setAllEvents}) {
 
-    useEffect(() => {
-    fetch("/events")
-        .then((eventsarray) => {
-            setAllEvents(eventsarray);       
-    })   
-    }, [])
-    
     function showAllEvents(allNewEvents) {
         const updatedAllEvents = [...allEvents, allNewEvents];
         setAllEvents(updatedAllEvents);
-    
-    
     }
+    const allEventList = allEvents.map((event, i)=>{
+        return(
+            <div key={i}>
+                <h1>Title: {event.title}</h1>
+                <p>Description: {event.description}</p>
+                <p>Attire: {event.attire}</p>
+            </div>
+        )
+    })
+
+
     return (
         <div>
-            <h1>
+            <h2>
                 All the events for you!
-            </h1>
-            <h2>{showAllEvents}</h2>
+            </h2>
+            <h3>{showAllEvents}</h3>
+            {allEventList}
         </div>
             
     )

@@ -17,8 +17,16 @@ function App() {
     .then((user) => setUser(user))
     },[])
 
+    const [allEvents, setAllEvents] = useState([])
+    useEffect(() => {
+      fetch("/events")
+          .then(r => r.json())
+          .then(setAllEvents)  
+      }, [])
     // The useEffect above should be for grabbing our sessions for logged in users. Would this be a separate GET route or attached to the login? 
 
+
+    
   return (
     <div className="App">
       <NavBar/>
@@ -31,7 +39,7 @@ function App() {
       <Route exact path="/signup" element={<SignUp user= {user} setUser= {setUser} />}/>
       {/* Need events page for showing all events and creating events */}
       {/* Need event setting page that allows us to ... Ask the user if they're bringing a plus one to an event */}
-      <Route exact path="/events" element={<EventList/>}/>
+      <Route exact path="/events" element={<EventList allEvents={allEvents} setAllEvents={setAllEvents}/>}/>
     </Routes>
     </div>
   );

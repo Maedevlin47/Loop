@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  resources :event_settings, only: [:index, :show]
+  resources :event_settings, only: [:index, :show, :create]
   resources :events, only: [:index, :create, :show]
   # resources :users, only: [:index, :create]
 
