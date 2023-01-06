@@ -14,7 +14,7 @@ export default function EventCard({event, title, description, attire}) {
 
     function handleClick(e) {
         e.preventDefault();
-        fetch("/eventcard", {
+        fetch("/event_setting/:id", {
             method: "GET",
             headers: {"Content-Type": "application/json"},
             // body: JSON.stringify(plusOne),
@@ -32,7 +32,7 @@ export default function EventCard({event, title, description, attire}) {
             <h4>{`Event's Description: ${event.description}`}</h4>
             <h5>{`Event's Attire: ${event.attire}`}</h5>
         <br/> 
-        <button onClick={handleClick}>{plusOne ? "Lone Ranger" : "More Friends, More fun"}</button>
+        {/* <button onClick={handleClick}>{plusOne ? "Lone Ranger" : "More Friends, More fun"}</button> */}
         </div>
 
     )
