@@ -32,7 +32,7 @@ export default function EventCard({event, title, description, attire}) {
             <h4>{`Event's Description: ${event.description}`}</h4>
             <h5>{`Event's Attire: ${event.attire}`}</h5>
         <br/> 
-        {/* <button onClick={handleClick}>{plusOne ? "Lone Ranger" : "More Friends, More fun"}</button> */}
+        <button onClick={handleClick}>{plusOne ? "Lone Ranger" : "More Friends, More fun"}</button>
         </div>
 
     )

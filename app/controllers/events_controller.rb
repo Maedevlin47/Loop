@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+    skip_before_action :authorize, only: [:index]
 
     def index
         events = Event.all
@@ -21,8 +22,8 @@ class EventsController < ApplicationController
         event_show = Event.show (all_events_params)
         if event_show
             render json: event_show, serializer: EventSerializer
-        else render
-            json: {"error": "No event found"}, status: :not_found
+        else 
+            render json: {"error": "No event found"}, status: :not_found
         end
     end
 
