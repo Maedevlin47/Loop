@@ -6,6 +6,7 @@ import SignUp from './SignUp';
 import Home from './Home';
 import NavBar from './NavBar';
 import EventList from './EventList';
+import LogOut from './LogOut';
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
       <Route exact path="/home" element={<Home user={user} setUser ={setUser}/>}/>
       <Route exact path="/login" element={<Login  user= {user} setUser= {setUser} />}/>
       <Route exact path="/signup" element={<SignUp user= {user} setUser= {setUser} />}/>
+      <Route exact path="/logout" element={<LogOut user= {user} setUser= {setUser} />}/>
       {/* Need events page for showing all events and creating events */}
       {/* Need event setting page that allows us to ... Ask the user if they're bringing a plus one to an event */}
       <Route exact path="/events" element={<EventList allEvents={allEvents} setAllEvents={setAllEvents}/>}/>

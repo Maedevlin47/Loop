@@ -8,6 +8,7 @@ export default function NavBar() {
             {/* <NavLink className="home" to="/">Home</NavLink> */}
             <NavLink className="signup" to="/signup">Signup</NavLink>
             <NavLink className="events" to="/events">Event List</NavLink>
+            <NavLink className="logout" to="/logout">Logout</NavLink>
         </div>
     )
 }
