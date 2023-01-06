@@ -17,10 +17,22 @@ class EventsController < ApplicationController
         end
     end
 
+    def show
+        event_show = Event.show (all_events_params)
+        if event_show
+            render json: event_show, serializer: EventSerializer
+        else render
+            json: {"error": "No event found"}, status: :not_found
+        end
+    end
+
 private ########################################
 
     def new_event_params
         params.permit(:title, :description, :attire)
     end
 
+    def all_events_params
+        params.permit(:title, :description, :attire)
+    end
 end

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
-  resources :event_settings, only: [:index]
-  resources :events, only: [:index, :create]
+  resources :event_settings, only: [:index, :show]
+  resources :events, only: [:index, :create, :show]
   # resources :users, only: [:index, :create]
 
 
@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   # get "/eventcard", to: "event_settings#show"
 
-  #can you see this comment, Mae????
+
 
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!
