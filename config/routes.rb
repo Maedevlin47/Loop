@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   # get "/eventcard", to: "event_settings#show"
 
-  # get "/eventlist", to: "events#show"
+
 
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!
