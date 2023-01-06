@@ -4,9 +4,6 @@ import EventListCard from "./EventListCard";
 
 function EventList({allEvents, setAllEvents, handleDeleteEvent}) {
 
-    // const [userId, setUserId]=useState('')
-    // const [eventId, setEventId]=useState('')
-    // const [plusOne, setPlusOne] =useState('')
     const [plusOne, setPlusOne] = useState({
         user_id: "",
         event_id: "",
@@ -19,18 +16,7 @@ function EventList({allEvents, setAllEvents, handleDeleteEvent}) {
         setAllEvents(updatedAllEvents);
     }
 
-    function handleClick(e) {
-        e.preventDefault();
-
-        fetch('/event_settings', {
-            method: "POST",
-            headers: {"Content-Type": "Application/json"},
-            body: JSON.stringify(plusOne)
-            }).then((r) => {setPlusOne(!plusOne);
-                // navigate('/eventcard')
-    
-            })  
-        }  
+     
 
     return (
         <div>
@@ -47,29 +33,5 @@ export default EventList;
 
 
 
-  // function handleClick(e) {
-    //     e.preventDefault();
-
-    //     fetch('/event_settings', {
-    //         method: "POST",
-    //         headers: {"Content-Type": "Application/json"},
-    //         body: JSON.stringify(plusOne)
-    //         }).then((r) => {setPlusOne(!plusOne);
-    //             // navigate('/eventcard')
-    
-    //         })  
-    //     }    
-            // .then (response => response.json())
-    //         .then((r) => {
-    //             if (r.ok) {
-    //                 r.json().then((newPlusOne) => {setPlusOne([...allEvents, newPlusOne])
-    //                 })
-    //             } else {
-    //                 r.json().then(json => {
-    //                     console.log(json)
-    //                 })
-    //             }
-                    
-    //         })
-    // }
+  
 

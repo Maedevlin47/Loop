@@ -32,7 +32,7 @@ function CreateEvent ({userEvents, setUserEvents}) {
                 if (r.ok) {
                     r.json().then((newEvent) => {setUserEvents([...userEvents, newEvent])
                         // [] make into an array, put setterfunction here
-                        // navigate('/eventlist')
+                        // navigate('/events')
                     })
                 } else {
                     r.json().then(json => {
